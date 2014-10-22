@@ -1,0 +1,33 @@
+
+
+<ion-view title="Home">
+  <ion-content class="padding">
+    <h1>Home</h1>
+    <div class="bar bar-header item-input-inset">
+		  <label class="item-input-wrapper">
+		    <i class="icon ion-ios7-search placeholder-icon"></i>
+		    <input type="search" placeholder="Search" ng-model= "term">
+		  </label>
+		  <button class="button button-clear" ng-click="doSearch(term);">
+		    
+		    Search
+		  </button>
+		</div>
+
+
+
+
+     <div class="list">
+
+        <a ng-repeat="item in items" 
+           href="#/{{item.id}}"
+           class="item item-thumbnail-left">
+
+          <img ng-src="{{ item.artworkUrl100 }}">
+          <h2>{{ item.album }}</h2>
+          <h4>{{ item.trackName }}</h4>
+        </a>
+
+      </div>
+  </ion-content>
+</ion-view>
