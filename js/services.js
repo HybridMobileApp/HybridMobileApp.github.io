@@ -41,9 +41,34 @@ var term = "hipHop";
                       "media": "musicVideo"
                   }
               }).success(function(data, status, headers, config) {
-                  console.log("is scope : " + JSON.stringify (data) );
+                 // console.log("is scope : " + JSON.stringify (data) );
                   list = data.results;
                   $rootScope.$broadcast('data:updated',data);
+              }).error(function(data, status, headers, config) {
+                  console.log("error" + data);
+              });
+
+    },
+    all: function() {
+      return list;
+    },
+    get: function() {
+     
+    }
+  }
+})
+.factory('cricket', function( $http , $rootScope ) {
+  var list = [];
+
+
+var term = "hipHop";
+ return {
+    query: function(){
+              
+               $http.get("http://cricscore-api.appspot.com/csa").success(function(data, status, headers, config) {
+                  console.log("is scope : " + JSON.stringify (data) );
+                  list = data.results;
+                  $rootScope.$broadcast('match:updated',data);
               }).error(function(data, status, headers, config) {
                   console.log("error" + data);
               });

@@ -22,6 +22,13 @@ $scope.$on('data:updated', function(event,data) {
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
   $scope.friend = Friends.get($stateParams.friendId);
 })
-
+.controller('cricketCtrl', function($scope, $stateParams ,cricket) {
+	cricket.query();
+	$scope.$on('match:updated', function(event,data) {
+     // you could inspect the data to see if what you care about changed, or just update your own scope
+     $scope.items = cricket.all();
+   });
+ 
+})
 .controller('AccountCtrl', function($scope) {
 });

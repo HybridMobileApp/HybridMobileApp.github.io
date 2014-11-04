@@ -57,7 +57,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.friend-detail', {
+    .state('tab.cricket', {
+      url: '/cricket',
+      views: {
+        'tab-cricket': {
+          templateUrl: 'templates/cricket.html',
+          controller: 'cricketCtrl'
+        }
+      }
+    })
+   /* .state('tab.friend-detail', {
       url: '/friend/:friendId',
       views: {
         'tab-friends': {
@@ -65,7 +74,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'FriendDetailCtrl'
         }
       }
-    })
+    })*/
 
     .state('tab.account', {
       url: '/account',

@@ -21,7 +21,13 @@
 
 .Myheader > button.tag {
    font-size: 30px;
+.fright {
+	float: right;
 }
-
-
+.fleft {
+	float: left;
+}
+.pad70{
+padding-top: 70px;
+}
 
