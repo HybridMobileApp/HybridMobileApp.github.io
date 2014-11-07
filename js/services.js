@@ -65,7 +65,7 @@ var term = "hipHop";
  return {
     query: function(){
               
-               $http.get("http://cricscore-api.appspot.com/csa").success(function(data, status, headers, config) {
+               $http.get("http://cricscore-api.appspot.com/csa",{crossDomain: true}).success(function(data, status, headers, config) {
                   console.log("is scope : " + JSON.stringify (data) );
                   list = data.results;
                   $rootScope.$broadcast('match:updated',data);

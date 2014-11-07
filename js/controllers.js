@@ -1,5 +1,10 @@
 angular.module('starter.controllers', [])
+.config(['$httpProvider', function($httpProvider) {
+     $httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
+}]) 
 .controller('DashCtrl', function($scope , itunes) {
 itunes.query("hip-hop");
 
